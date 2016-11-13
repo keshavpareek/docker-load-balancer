@@ -1,7 +1,8 @@
-FROM ubuntu:latest
+FROM oraclelinux:latest
 
-RUN apt-get update \
-    && apt-get install -y ipvsadm curl
+RUN yum -y update \
+    && yum -y install ipvsadm curl \
+    && yum clean all
 
 COPY entrypoint.sh /entrypoint.sh
 
